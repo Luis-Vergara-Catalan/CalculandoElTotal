@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío 1 - JavaScript</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="card">
+            <div class="img-card"></div>
+              <h6>Laptop Gamer AMD</h6>
+              <p>Precio base: $<span class="precio-inicial"></span></p>
+        
+              <p>Cantidad:
+                <span class="cantidad">0</span></p>
+                <p>
+                <button onclick="
+                    cantidad = document.querySelector('.cantidad') /* aqui se reemplaza el span <span class= .cantidad > 0 </span>*/
+                    aumentar = Number(cantidad.innerHTML)          /* se extrae solo el 0 siendo un string por lo que agregando Number, pasa a ser un 0 numerico */ 
+                    aumentar = aumentar + 1                        /* al 0 numerico se suma 1 por lo que el span deja de ser 0 */              
+                    cantidad.innerHTML = aumentar                  /* y .cantidad se transforma en 1 y asi sucesivamente*/
+
+                    total = document.querySelector('.valor-total') /* se crea un total donde se toma el span <span class= .valor-total></span>  */
+                    total.innerHTML = aumentar * precio          /* aqui se multiplica el precio por aumentar y lo reemplaza en el span*/
+                    
+                ">+</button>
+
+                <button onclick="
+                    cantidad = document.querySelector('.cantidad')
+                    disminuir = Number (cantidad.innerHTML)
+                    disminuir = disminuir - 1
+                    cantidad.innerHTML = disminuir
+
+                    total = document.querySelector('.valor-total')
+                    total.innerHTML = disminuir * precio
+            
+                ">-</button>
+              </p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="total-section">
+        <p>Total a pagar: $<span class="valor-total">0</span> </p>
+    </div>
+
+    <script src="index.js">
+      
+
+    </script>
+</body>
+</html>
